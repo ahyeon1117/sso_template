@@ -1,0 +1,27 @@
+server:
+  port: 1117
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  profiles:
+    include: security
+  application:
+    name: blog
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 10
+      connection-init-sql: select 1
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5431/postgres # for local
+    username: postgres
+    password: post123!
+
+logging.level.org.springframework.security: DEBUG
